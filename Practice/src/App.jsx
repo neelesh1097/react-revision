@@ -13,7 +13,10 @@ const App = () => {
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
-    setFormData({ ...formData, [name]: type === 'checkbox' ? checked : value });
+    setFormData({
+      ...formData,
+      [name]: type === 'checkbox' ? checked : value
+    });
   };
 
   const handleSubmit = (e) => {
@@ -29,29 +32,59 @@ const App = () => {
         <div className="form-row">
           <div className="form-group">
             <label>First Name *</label>
-            <input type="text" name="firstName" value={formData.firstName} onChange={handleChange} required />
+            <input
+              type="text"
+              name="firstName"
+              value={formData.firstName}
+              onChange={handleChange}
+              required
+            />
           </div>
 
           <div className="form-group">
             <label>Last Name *</label>
-            <input type="text" name="lastName" value={formData.lastName} onChange={handleChange} required />
+            <input
+              type="text"
+              name="lastName"
+              value={formData.lastName}
+              onChange={handleChange}
+              required
+            />
           </div>
         </div>
 
         <div className="form-group">
           <label>Email Address *</label>
-          <input type="email" name="email" value={formData.email} onChange={handleChange} required />
+          <input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
         </div>
 
         <div className="form-group">
           <label>Query Type *</label>
           <div className="radio-group">
             <label>
-              <input type="radio" name="queryType" value="General Enquiry" checked={formData.queryType === 'General Enquiry'} onChange={handleChange} />
+              <input
+                type="radio"
+                name="queryType"
+                value="General Enquiry"
+                checked={formData.queryType === 'General Enquiry'}
+                onChange={handleChange}
+              />
               General Enquiry
             </label>
             <label>
-              <input type="radio" name="queryType" value="Support Request" checked={formData.queryType === 'Support Request'} onChange={handleChange} />
+              <input
+                type="radio"
+                name="queryType"
+                value="Support Request"
+                checked={formData.queryType === 'Support Request'}
+                onChange={handleChange}
+              />
               Support Request
             </label>
           </div>
@@ -59,12 +92,23 @@ const App = () => {
 
         <div className="form-group">
           <label>Message *</label>
-          <textarea name="message" value={formData.message} onChange={handleChange} required></textarea>
+          <textarea
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            required
+          ></textarea>
         </div>
 
         <div className="form-group checkbox">
           <label>
-            <input type="checkbox" name="consent" checked={formData.consent} onChange={handleChange} required />
+            <input
+              type="checkbox"
+              name="consent"
+              checked={formData.consent}
+              onChange={handleChange}
+              required
+            />
             I consent to being contacted by the team
           </label>
         </div>
@@ -76,3 +120,4 @@ const App = () => {
 };
 
 export default App;
+
